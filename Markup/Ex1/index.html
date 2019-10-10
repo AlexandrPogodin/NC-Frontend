@@ -1,101 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
-</head>
-
-<body>
-  <h1>Заголовок первого уровня</h1>
-  <h2>Заголовок второго уровня</h2>
-  <p>Est laboriosam ut officia esse officiis quasi. Eos molestiae nemo molestiae officia inventore suscipit. Magnam est
-    culpa qui. Aut similique enim nihil totam. Similique fugiat vel. Neque quo aut iusto neque nam.</p>
-  <p>Velit atque harum et et dolores dolorum qui. Totam ipsum pariatur non optio amet et. Sed a animi rem quod ex odit
-    placeat perferendis explicabo. Quisquam sunt aut et quidem deserunt error voluptas. Ea tenetur delectus est.
-    Nesciunt sit dolorem ducimus sit libero sit id.</p>
-  <h3>Заголовок третьего уровня</h3>
-  <table border="1" width="600">
-    <thead>
-      <tr>
-        <th>№</th>
-        <th>name</th>
-        <th>name</th>
-        <th>name</th>
-        <th>name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>1</th>
-        <th>text</th>
-        <th>text</th>
-        <th colspan="2">2 cols</th>
-      </tr>
-      <tr>
-        <th>2</th>
-        <th>text</th>
-        <th>text</th>
-        <th>name</th>
-        <th>name</th>
-      </tr>
-    </tbody>
-  </table>
-  <br>
-  <table border="1" width="600">
-    <tbody>
-      <tr>
-        <th valign="top">
-          <ol>
-            <li>List item 1</li>
-            <li>List item 2</li>
-            <li>List item 3</li>
+  <body>
+    <h1>Заголовок первого уровня</h1>
+    <h2>Заголовок второго уровня</h2>
+    <p>
+      <b>Est laboriosam ut officia esse officiis quasi.</b> Eos molestiae nemo
+      molestiae officia inventore suscipit. Magnam est culpa qui. Aut similique
+      enim nihil totam. Similique fugiat vel. Neque quo aut iusto neque nam.
+    </p>
+    <p>
+      <i>Velit atque harum et et dolores dolorum qui.</i> Totam ipsum pariatur
+      non optio amet et. Sed a animi rem quod ex odit placeat perferendis
+      explicabo. Quisquam sunt aut et quidem deserunt error voluptas. Ea tenetur
+      delectus est. Nesciunt sit dolorem ducimus sit libero sit id.
+    </p>
+    <h3>Заголовок третьего уровня</h3>
+    <table border="1" width="600">
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>name</th>
+          <th>name</th>
+          <th>name</th>
+          <th>name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <th>text</th>
+          <th>text</th>
+          <th colspan="2">2 cols</th>
+        </tr>
+        <tr>
+          <th>2</th>
+          <th>text</th>
+          <th>text</th>
+          <th>name</th>
+          <th>name</th>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <table border="1" width="600">
+      <tbody>
+        <tr>
+          <th valign="top">
+            <ol>
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <li>List item 3</li>
+              <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+              </ul>
+              <li>List item 4</li>
+              <li>List item 5</li>
+            </ol>
+          </th>
+          <th valign="top">
             <ul>
-              <li>Item 1</li>
-              <li>Item 2</li>
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <li>List item 3</li>
+              <li>List item 4</li>
+              <li>List item 5</li>
             </ul>
-            <li>List item 4</li>
-            <li>List item 5</li>
-          </ol>
-        </th>
-        <th valign="top">
-          <ul>
-            <li>List item 1</li>
-            <li>List item 2</li>
-            <li>List item 3</li>
-            <li>List item 4</li>
-            <li>List item 5</li>
-          </ul>
-        </th>
-      </tr>
-    </tbody>
-  </table>
-  <br>
-  <h1>Form</h1>
-  <form action="" method="GET">
-    <label for="firstName">First name:</label>
-    <input type="text" name="firstName" placeholder="Your first name" id="">
-    <br><br>
-    <label for="lastName">Last name:</label>
-    <input type="text" name="lastName" placeholder="Your last name" id="">
-    <br><br>
-    <label for="email">Email:</label>
-    <input type="email" name="email" placeholder="Your email" id="">
-    <br><br>
-    <label>
-      <input type="radio" name="gender" value="male">
-      Male
-    </label>
-    <label>
-      <input type="radio" name="gender" value="female">
-      Female
-    </label>
-    <br><br>
-    <button type="submit">Submit</button>
-    <button type="reset">Reset</button>
-  </form>
-</body>
-
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <h1>Form</h1>
+    <form action="" method="GET">
+      <label for="firstName">First name:</label>
+      <input type="text" name="firstName" placeholder="Your first name" id="" />
+      <br /><br />
+      <label for="lastName">Last name:</label>
+      <input type="text" name="lastName" placeholder="Your last name" id="" />
+      <br /><br />
+      <label for="email">Email:</label>
+      <input type="email" name="email" placeholder="Your email" id="" />
+      <br /><br />
+      <label>
+        <input type="radio" name="gender" value="male" />
+        Male
+      </label>
+      <label>
+        <input type="radio" name="gender" value="female" />
+        Female
+      </label>
+      <br /><br />
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+  </body>
 </html>
