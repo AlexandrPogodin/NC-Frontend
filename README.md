@@ -11,3 +11,7 @@ _Frontend Development Course Task Repository_
 #### Markup
 
 Exercise 1 - [codepen.io](https://codepen.io/alexandrpogodin/pen/abbOPvz 'codepen.io')
+
+#### JavaScript
+
+Exercise 1 - [codepen.io](https://codepen.io/alexandrpogodin/pen/qBBbRLw 'codepen.io')
