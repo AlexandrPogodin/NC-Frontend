@@ -38,7 +38,7 @@ function firstTask(employees) {
  // should show the result
 console.log(firstTask(employees));
 
-function secondTask(employees) {
+function femaleUniqueNames(employees) {
 	const result = [];
 	employees.forEach((item, i, arr) => {
 		if (item.gender === 'female' && !result.includes(item.name)){
@@ -49,7 +49,7 @@ function secondTask(employees) {
 }
 
  // should show the result
-console.log(secondTask(employees));
+console.log(femaleUniqueNames(employees));
 
 
 
