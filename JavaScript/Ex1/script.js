@@ -1,4 +1,4 @@
-let employees = [
+const employees = [
   {
     name: 'Alex',
     surname: 'Yavkin',
@@ -507,7 +507,7 @@ let employees = [
  * birthday - from 01/01/1981 to 01/01/1993
  * salary - from 10000 to 35000
  */
-let employee = {
+const employee = {
   name: '',
   surname: '',
   hireDate: '2/14/2013',
@@ -529,9 +529,9 @@ function firstTask(employees) {
     bDate = new Date(b.birthday);
     if (aDate > bDate) {
       return 1;
-    } else {
+    } 
       return -1;
-    }
+    
   });
   return result;
 }
@@ -541,7 +541,7 @@ console.log(firstTask(employees));
 
 function femaleUniqueNames(employees) {
   const result = [];
-  employees.forEach((item, i, arr) => {
+  employees.forEach(item => {
     if (item.gender === 'female' && !result.includes(item.name)) {
       result.push(item.name);
     }
