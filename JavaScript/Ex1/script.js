@@ -1,4 +1,4 @@
-let employees = [
+const employees = [
   {
     name: 'Alex',
     surname: 'Yavkin',
@@ -507,7 +507,7 @@ let employees = [
  * birthday - from 01/01/1981 to 01/01/1993
  * salary - from 10000 to 35000
  */
-let employee = {
+const employee = {
   name: '',
   surname: '',
   hireDate: '2/14/2013',
@@ -525,14 +525,13 @@ function firstTask(employees) {
     }
   });
   result.sort((a, b) => {
-    aDate = new Date(a.birthday);
-    bDate = new Date(b.birthday);
+    const aDate = new Date(a.birthday);
+    const bDate = new Date(b.birthday);
     if (aDate > bDate) {
       return 1;
     } else {
-      return -1;
-    }
-  });
+      return -1;  
+    });
   return result;
 }
 
