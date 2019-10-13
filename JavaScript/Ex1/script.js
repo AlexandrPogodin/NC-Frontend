@@ -529,9 +529,16 @@ function firstTask(employees) {
     const bDate = new Date(b.birthday);
     if (aDate > bDate) {
       return 1;
+<<<<<<< HEAD
     } else {
       return -1;  
     });
+=======
+    } 
+      return -1;
+    
+  });
+>>>>>>> 8bc7d6292dab35b98efea82bc322835492ab9bfa
   return result;
 }
 
@@ -540,7 +547,7 @@ console.log(firstTask(employees));
 
 function femaleUniqueNames(employees) {
   const result = [];
-  employees.forEach((item, i, arr) => {
+  employees.forEach(item => {
     if (item.gender === 'female' && !result.includes(item.name)) {
       result.push(item.name);
     }
