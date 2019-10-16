@@ -17,6 +17,11 @@ body {
   display: flex;
 }
 
+.flex-container-img {
+  display: flex;
+  margin: 0 -5px;
+}
+
 .sidebar {
   width: 15%;
   height: 100vh;
@@ -27,7 +32,6 @@ body {
 .content {
   background-color: #ffffff;
   width: 100%;
-  height: 300vh;
 }
 
 .nav-logo {
@@ -108,14 +112,26 @@ body {
   margin-top: 3rem;
 }
 
-.img_wrap {
-  margin-top: 2%;
-  margin-right: 10px;
+.img_wrap_one {
+  margin: 2rem auto;
   width: 250px;
   height: 250px;
 }
 
-.img_wrap img {
+.img_wrap_one img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+}
+
+.img_wrap_two {
+  margin: 2rem 5px;
+  /* width: 350px; */
+  height: 300px;
+}
+
+.img_wrap_two img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -137,9 +153,56 @@ a.btn:hover {
   background: #2196F3;
 }
 
-/* при наведении курсора мышки */
 a.btn:active {
   background: #2196F3;
 }
 
-/* при нажатии */
+.block-form {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.block-form-text {
+  padding: 5%;
+}
+
+.input-control {
+  font-family: 'Roboto', sans-serif;
+  /* min-height: 3px; */
+  width: 500px;
+  margin-top: 10px;
+  border: 1px solid #03A9F4;
+  color: #03A9F4;
+  font-weight: 100;
+  font-size: 1.2rem;
+  padding: .7rem;
+}
+
+.input-control::placeholder {
+  color: #03A9F4;
+  font-weight: 100;
+}
+
+a.btn-submit {
+  margin-top: 50px;
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: #03A9F4;
+  padding: .7em 1.5em;
+  transition-duration: .3s;
+}
+
+a.btn-submit:hover {
+  background: #2196F3;
+}
+
+a.btn-submit:active {
+  background: #2196F3;
+}
+
+.copyright-block {
+  padding: 5%;
+}
