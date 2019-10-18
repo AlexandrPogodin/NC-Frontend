@@ -21,11 +21,17 @@ let player = 'X';
 let gameIsPlaying = true;
 
 function startGame() {
+  cells.forEach(cell => {
+    cell.classList.remove('noTouch');
+  });
   gameIsPlaying = true;
   playground.classList.remove('win');
 }
 
 function endGame() {
+  cells.forEach(cell => {
+    cell.classList.add('noTouch');
+  });
   gameIsPlaying = false;
   playground.classList.add('win');
 }

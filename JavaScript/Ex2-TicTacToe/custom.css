@@ -46,6 +46,7 @@ body {
   height: 60px;
   line-height: 50px;
   border: 1px solid #212121;
+  background-color: #fff;
   cursor: pointer;
   text-align: center;
   font-size: 32px;
@@ -55,6 +56,11 @@ body {
 
 .game-cell:hover {
   background-color: #E0E0E0;
+}
+
+.game-cell.noTouch {
+  cursor: default;
+  pointer-events: none;
 }
 
 .game-cell.O {
