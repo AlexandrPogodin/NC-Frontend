@@ -14,5 +14,5 @@ Exercise 1 - [codepen.io](https://codepen.io/alexandrpogodin/pen/abbOPvz 'codepe
 
 #### JavaScript
 
-Exercise 1 - [codepen.io](https://codepen.io/alexandrpogodin/pen/qBBbRLw 'codepen.io')
+Exercise 1 - [codepen.io](https://codepen.io/alexandrpogodin/pen/qBBbRLw 'codepen.io')  
 Exercise 2 TicTacToe Game - [codepen.io](https://codepen.io/alexandrpogodin/pen/PooGXBP 'codepen.io')
