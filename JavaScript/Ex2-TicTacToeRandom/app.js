@@ -67,11 +67,12 @@ function changePlayer() {
 
 function renderMsg(p) {
   if (p === 'X') msg.innerText = `Ходит игрок ${p}`;
-  if (p === 'O') msg.innerText = `Ходит компьютер`;
+  if (p === 'O') msg.innerText = `Ходит рандом :D`;
 }
 
 function renderWinMsg(p) {
-  msg.innerText = `Победил игрок ${p}`;
+  if (p === 'X') msg.innerText = `Победил игрок ${p}`;
+  if (p === 'O') msg.innerText = `Победил рандом :D`;
 }
 
 function renderNoMovesMsg() {
