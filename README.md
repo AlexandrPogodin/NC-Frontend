@@ -15,5 +15,5 @@ Exercise 1 - [codepen.io](https://codepen.io/alexandrpogodin/pen/abbOPvz 'codepe
 #### JavaScript
 
 Exercise 1 - [codepen.io](https://codepen.io/alexandrpogodin/pen/qBBbRLw 'codepen.io')  
-Exercise 2 TicTacToe (Player vs player) - [codepen.io](https://codepen.io/alexandrpogodin/pen/PooGXBP 'codepen.io')
+Exercise 2 TicTacToe (Player vs player) - [codepen.io](https://codepen.io/alexandrpogodin/pen/PooGXBP 'codepen.io')  
 Exercise 2 TicTacToe Random (Player vs Random) - [codepen.io](https://codepen.io/alexandrpogodin/pen/GRRNddV 'codepen.io')
