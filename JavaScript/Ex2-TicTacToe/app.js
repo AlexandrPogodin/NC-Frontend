@@ -86,7 +86,6 @@ function move(e) {
   e.target.classList.add(player);
   e.target.innerText = player;
   addMoveToData(currentCell, player);
-  console.log('PG: ', dataOfPlayground);
   if (isWinner(dataOfPlayground, player)) {
     endGame();
     renderWinMsg(player);
