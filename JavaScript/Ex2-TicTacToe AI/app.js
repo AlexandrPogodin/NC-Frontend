@@ -95,12 +95,10 @@ function minimax(newBoard, p) {
 
   for (let i = 0; i < availSpots.length; i += 1) {
     const move = {};
-    move.index = newBoard[availSpots[i]];
 
-    // совершить ход за текущего игрока
+    move.index = newBoard[availSpots[i]];
     newBoard[availSpots[i]] = p;
 
-    // получить очки, заработанные после вызова минимакса от противника текущего игрока
     if (p === 'O') {
       const result = minimax(newBoard, 'X');
       move.score = result.score;
@@ -109,10 +107,7 @@ function minimax(newBoard, p) {
       move.score = result.score;
     }
 
-    // очистить клетку
     newBoard[availSpots[i]] = move.index;
-
-    // положить объект в массив
     moves.push(move);
   }
 
