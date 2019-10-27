@@ -11,7 +11,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- Styles -->
-  <link rel="stylesheet" type="text/css" href="custom.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
   <title>Avalon</title>
 </head>
 
@@ -173,13 +175,104 @@
         </div>
       </div>
     </div>
-    <div class="grid-item f">
-
-    </div>
+    <div class="grid-item f"></div>
     <div class="grid-item g">
-
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <img src="https://tinyfac.es/data/avatars/475605E3-69C5-4D2B-8727-61B7BB8C4699-500w.jpeg" alt="" srcset="">
+          <h3 class="type">Web Developer</h3>
+          <h2 class="person-name">JOHNNY SMITH</h2>
+          <p class="about-person">
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum magni laboriosam quae nihil ipsam veniam
+            adipisci saepe nesciunt iste quod repudiandae ab fugiat quasi provident, dignissimos fugit, ratione, iure
+            excepturi.""
+          </p>
+        </div>
+        <div class="item">
+          <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="" srcset="">
+          <h3 class="type">HR</h3>
+          <h2 class="person-name">Yi Min Chu</h2>
+          <p class="about-person">
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum magni laboriosam quae nihil ipsam veniam
+            adipisci saepe nesciunt iste quod repudiandae ab fugiat quasi provident, dignissimos fugit, ratione, iure
+            excepturi.""
+          </p>
+        </div>
+        <div class="item">
+          <img src="https://pbs.twimg.com/profile_images/1000050491970260993/FJkauyEa.jpg" alt="" srcset="">
+          <h3 class="type">Web Developer</h3>
+          <h2 class="person-name">Gary Steele</h2>
+          <p class="about-person">
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum magni laboriosam quae nihil ipsam veniam
+            adipisci saepe nesciunt iste quod repudiandae ab fugiat quasi provident, dignissimos fugit, ratione, iure
+            excepturi.""
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-item h">
+      <div class="h-item ha">
+        <div class="icon">
+          <i class="far fa-heart"></i>
+        </div>
+        <h2 class="h-title">Heart</h2>
+      </div>
+      <div class="h-item hb">
+        <div class="icon">
+          <i class="fas fa-home"></i>
+        </div>
+        <h2 class="h-title">Home</h2>
+      </div>
+      <div class="h-item hc">
+        <div class="icon">
+          <i class="fas fa-angle-left"></i>
+        </div>
+        <h2 class="h-title">Left</h2>
+      </div>
+      <div class="h-item hd">
+        <div class="icon">
+          <i class="far fa-comment-dots"></i>
+        </div>
+        <h2 class="h-title">Chat</h2>
+      </div>
+    </div>
+    <div class="grid-item i">
+      <div class="form-row">
+        <input type="text" class="input" placeholder="Your name...">
+        <input type="text" class="input" placeholder="Your email...">
+        <input type="text" class="input" placeholder="Subject...">
+      </div>
+      <div class="row">
+        <textarea class="textarea" name="msg" id="" placeholder="Your message..."></textarea>
+      </div>
+      <button class="btn">SEND IT NOW</button>
+    </div>
+    <div class="grid-item j">
+      <div class="icon">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <h2 class="h-title">You can find us on maps</h2>
+    </div>
+    <div class="grid-item footer">
+      <p class="text">Copyright 2019 - <span class="color-pink">Alexandr pogodin</span></p>
     </div>
   </div>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+          margin: 10,
+          items: 1,
+          loop: true
+        });
+      });
+    });
+  </script>
+
 </body>
 
 </html>
