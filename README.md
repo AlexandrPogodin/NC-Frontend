@@ -12,6 +12,7 @@ _Frontend Development Course Task Repository_
 
 Exercise 1 - [codepen.io](https://codepen.io/alexandrpogodin/pen/abbOPvz 'codepen.io')  
 Exercise 2 Neaty (without logo) - [codepen.io](https://codepen.io/alexandrpogodin/pen/eYYgqyB 'codepen.io')
+Exercise 3 - [codepen.io](https://codepen.io/alexandrpogodin/pen/qBBjMEE 'codepen.io')
 
 #### JavaScript
 
