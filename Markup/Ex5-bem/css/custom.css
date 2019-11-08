@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.header-block {
+  background: url("https://images.unsplash.com/photo-1553474157-5f29a57c167f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80")
+    100% 100% no-repeat;
+  background-size: cover;
+  min-height: 60vh;
+}
+
+.header-block__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1000px;
+  margin: 0 auto; /* равные отступы по центру, работает только для горизонтального выравнивания */
+  padding: 50px 20px;
+}
+
+/* logo */
+
+.logo {
+}
+
+.logo__link {
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #f8dc46;
+  transition-duration: 0.5s;
+}
+
+/* main-menu */
+
+.main-menu {
+}
+
+.main-menu__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.main-menu__item + * {
+  margin-left: 15px;
+}
+
+.main-menu__link {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  transition-duration: 0.5s;
+}
+
+.main-menu__link._active {
+  cursor: default; /* меняем вид курсора */
+  pointer-events: none; /* запрещаем любую реакцию элемента на курсор, здесь -- переход по активной ссылке */
+}
+
+.main-menu__link._active,
+.main-menu__link:hover,
+.main-menu__link:active {
+  color: #f8dc46;
+}
+
+/* phone */
+
+.phone {
+}
+.phone__link {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #f8dc46;
+}
+
+/* social-menu */
+
+.social-menu {
+}
+
+.social-menu__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.social-menu__item + * {
+  margin-left: 20px;
+}
+
+.social-menu__link {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.social-menu__link._fb {
+  background-image: url("https://cdn2.iconfinder.com/data/icons/social-icons-circular-black/512/fb-512.png");
+}
+
+.social-menu__link._tw {
+  background-image: url("https://icons-for-free.com/iconfiles/png/512/social+tweet+twitter+icon-1320192294140475236.png");
+}
+
+.social-menu__link._gl {
+  background-image: url("https://cdn4.iconfinder.com/data/icons/social-papercut/512/google-plus.png");
+}
