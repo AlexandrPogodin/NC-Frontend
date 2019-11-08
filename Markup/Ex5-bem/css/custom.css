@@ -196,7 +196,6 @@ body {
 
 .welcome-block__imgs {
   margin-left: 10px;
-  flex: 1;
   display: flex;
   justify-content: space-between;
   min-height: 400px;
@@ -224,13 +223,13 @@ body {
   font-weight: 500;
 }
 
-.welcome-block__img {
-  flex: 0 50%;
-  padding: 3px;
+.welcome-block__imgs-col {
+  flex: 1;
 }
 
-.welcome-block__img:nth-child(2n) {
-  padding-right: 0;
+.welcome-block__img-column {
+  flex: 0 50%;
+  padding-left: 10px;
 }
 
 .welcome-block__img1 {
@@ -241,22 +240,46 @@ body {
 }
 
 .welcome-block__img2 {
+  margin-top: 10px;
   height: 200px;
-  background: url("https://images.unsplash.com/photo-1529787915532-1bb524c4ca0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1330&q=80")
+  background: url("https://images.unsplash.com/photo-1459743421941-c1caaf5a232f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80")
     100% 100% no-repeat;
   background-size: cover;
 }
 
 .welcome-block__img3 {
-  height: 200px;
-  background: url("https://images.unsplash.com/photo-1529787915532-1bb524c4ca0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1330&q=80")
+  height: 180px;
+  background: url("https://images.unsplash.com/photo-1535333998810-2318fa54a96e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
     100% 100% no-repeat;
   background-size: cover;
 }
 
 .welcome-block__img4 {
-  height: 200px;
-  background: url("https://images.unsplash.com/photo-1529787915532-1bb524c4ca0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1330&q=80")
+  margin-top: 10px;
+  height: 220px;
+  background: url("https://images.unsplash.com/photo-1471079502516-250c19af6928?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80")
     100% 100% no-repeat;
   background-size: cover;
+}
+
+.imgs-columm__btn {
+  display: block;
+  position: relative;
+  top: -235px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #424242;
+  background-color: #ffc107;
+  border: 1px solid #ffc107;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  transition-duration: 0.5s;
+  /* margin-bottom: -200px; */
+}
+
+.imgs-columm__btn:hover {
+  background-color: #ff8f00;
+  border: 1px solid #ff8f00;
 }
