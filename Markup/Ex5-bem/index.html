@@ -10,6 +10,8 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" type="text/css" href="css/custom.css" />
     <title>Octopus</title>
   </head>
@@ -161,5 +163,81 @@
         <a href="#" class="diving-block__btn">Learn more</a>
       </div>
     </div>
+    <div class="blog-block">
+      <h1 class="blog-block__title">Latest from the blog</h1>
+      <div class="blog-posts">
+        <div class="blog-posts__post _bg1">
+          <h2 class="post__title">Octopus Dive CLub</h2>
+          <p class="post__content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quibusdam...
+          </p>
+          <a href="#" class="post__btn">read more</a>
+        </div>
+        <div class="blog-posts__post _bg2">
+          <h2 class="post__title">Scuba Diving in Limassol</h2>
+          <p class="post__content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+            voluptates recusandae a at officia nam suscipit quas earum tempore
+            laboriosam est delectus explicabo fugit expedita esse nostrum...
+          </p>
+          <a href="#" class="post__btn">read more</a>
+        </div>
+        <div class="blog-posts__post _bg3">
+          <h2 class="post__title">Training: PADI courses</h2>
+          <p class="post__content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ex
+            temporibus nemo magnam, veritatis quas, aperiam assumenda in
+            accusamus harum blanditiis quisquam. Nulla...
+          </p>
+          <a href="#" class="post__btn">read more</a>
+        </div>
+        <div class="blog-posts__post _bg4">
+          <h2 class="post__title">Scuba Diving in Cyprus</h2>
+          <p class="post__content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quibusdam...
+          </p>
+          <a href="#" class="post__btn">read more</a>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-block">
+      <h1 class="reviews-block__title">What people say</h1>
+      <div class="reviews-block__review owl-carousel owl-theme">
+        <div class="item">
+          <div class="item__review-dialog">
+            <p class="item__text">
+              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
+              similique, doloremque maxime dolor iusto eveniet voluptates ex non
+              quam dolores!"
+            </p>
+          </div>
+          <div class="review-author">
+            <img
+              class="item__img"
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt=""
+              width="30"
+            />
+            <h2 class="item__author">Mark Foster</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(document).ready(function() {
+          $(".owl-carousel").owlCarousel({
+            margin: 10,
+            items: 2,
+            loop: true
+          });
+        });
+      });
+    </script>
   </body>
 </html>
