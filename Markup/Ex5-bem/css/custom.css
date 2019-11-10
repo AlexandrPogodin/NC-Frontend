@@ -249,7 +249,7 @@ body {
 
 .welcome-block__img3 {
   height: 180px;
-  background: url("https://images.unsplash.com/photo-1535333998810-2318fa54a96e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+  background: url("https://images.unsplash.com/photo-1556004951-f08e9f0a5a40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80")
     100% 100% no-repeat;
   background-size: cover;
 }
@@ -280,6 +280,68 @@ body {
 }
 
 .imgs-columm__btn:hover {
+  background-color: #ff8f00;
+  border: 1px solid #ff8f00;
+}
+
+.diving-block {
+  min-height: 300px;
+  display: flex;
+  flex: 0 50%;
+}
+
+.diving-block__img {
+  flex: 0.99;
+  background: url("https://images.unsplash.com/photo-1454442124827-b7de573f10e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80")
+    100% 100% no-repeat;
+  background-size: cover;
+}
+
+.diving-block__col {
+  flex: 1;
+  background: #03a9f4;
+  padding: 40px 60px;
+}
+
+.diving-block__title {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.diving-block__subtitle {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.diving-block__text {
+  display: block;
+  max-width: 450px;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.diving-block__btn {
+  display: block;
+  margin-top: 20px;
+  width: 150px;
+  text-align: center;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #424242;
+  background-color: #ffc107;
+  border: 1px solid #ffc107;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  transition-duration: 0.5s;
+}
+
+.diving-block__btn:hover {
   background-color: #ff8f00;
   border: 1px solid #ff8f00;
 }
