@@ -484,3 +484,40 @@ body {
   font-size: 24px;
   font-weight: 500;
 }
+
+.footer {
+  background: #0d47a1;
+  min-height: 400px;
+}
+
+.footer__row {
+  display: flex;
+  width: 1000px;
+  margin: 0 auto;
+  flex: 1 2 1;
+  padding: 60px 0;
+}
+
+.col1__title {
+  color: #fff;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.col1__text {
+  display: block;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.col1__link {
+  color: #ffeb3b;
+  text-decoration: none;
+}
+
+.col1__link:hover {
+  color: #ff5722;
+}
