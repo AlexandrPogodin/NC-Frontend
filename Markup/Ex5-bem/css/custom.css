@@ -133,6 +133,7 @@ body {
   display: flex;
   width: 1000px;
   margin: 0 auto;
+  margin-top: -130px;
 }
 
 .cards-list__card {
