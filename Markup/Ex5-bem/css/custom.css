@@ -130,12 +130,9 @@ body {
 }
 
 .cards-list {
-  position: relative;
   display: flex;
   width: 1000px;
   margin: 0 auto;
-  top: -130px;
-  margin-bottom: -130px;
 }
 
 .cards-list__card {
@@ -519,5 +516,72 @@ body {
 }
 
 .col1__link:hover {
+  color: #ff5722;
+}
+
+.footer__col2 {
+  padding: 0 60px;
+}
+
+.col2__title {
+  display: block;
+  margin-top: 15px;
+  color: #fff;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.col2__text {
+  display: block;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.col2__link {
+  color: #ffeb3b;
+  text-decoration: none;
+}
+
+.col2__link:hover {
+  color: #ff5722;
+}
+
+.footer__col3 {
+  padding: 0 60px;
+}
+
+.col3__title {
+  display: block;
+  margin-top: 15px;
+  color: #fff;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.col3__text {
+  display: block;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.footer__icon {
+  width: 20px;
+  margin-right: 6px;
+}
+
+.col3__link {
+  color: #ffeb3b;
+  text-decoration: none;
+}
+
+.col3__link:hover {
   color: #ff5722;
 }
