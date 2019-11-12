@@ -17,25 +17,38 @@ class Character extends Entity {
   constructor(speed, position) {
     super(position);
     this.speed = speed;
+    this.score = 0;
   }
 
   moveUp() {
-    if (this.position[1] > -1 + this.speed) this.position[1] -= this.speed;
+    if (this.position[1] > -1 + this.speed) {
+      updateEntityList(this, this.position[0], this.position[1] - this.speed);
+      this.position[1] -= this.speed;
+    }
     updatePlayground();
   }
 
   moveDown() {
-    if (this.position[1] < 10 - this.speed) this.position[1] += this.speed;
+    if (this.position[1] < 10 - this.speed) {
+      updateEntityList(this, this.position[0], this.position[1] + this.speed);
+      this.position[1] += this.speed;
+    }
     updatePlayground();
   }
 
   moveRight() {
-    if (this.position[0] < 10 - this.speed) this.position[0] += this.speed;
+    if (this.position[0] < 10 - this.speed) {
+      updateEntityList(this, this.position[0] + this.speed, this.position[1]);
+      this.position[0] += this.speed;
+    }
     updatePlayground();
   }
 
   moveLeft() {
-    if (this.position[0] > -1 + this.speed) this.position[0] -= this.speed;
+    if (this.position[0] > -1 + this.speed) {
+      updateEntityList(this, this.position[0] - this.speed, this.position[1]);
+      this.position[0] -= this.speed;
+    }
     updatePlayground();
   }
 }
@@ -111,6 +124,18 @@ function updatePlayground() {
   renderPlayground();
 }
 
+function updateEntityList(obj, x, y) {
+  if (playground[y][x] === '🍲') obj.score += 1;
+  const newEntityList = entityList.filter(entity => {
+    if (entity.position[0] === x && entity.position[1] === y) {
+      return false;
+    }
+    return true;
+  });
+  entityList.length = 0;
+  entityList.push(...newEntityList);
+}
+
 $app.addEventListener('click', e => {
   if (e.target && e.target.matches('.btn-update')) {
     updatePlayground();
@@ -119,3 +144,6 @@ $app.addEventListener('click', e => {
 
 createPlayground();
 renderPlayground();
+
+const food = new Food([0, 3]);
+const cat = new Cat([0, 2]);
