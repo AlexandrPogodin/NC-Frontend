@@ -446,14 +446,20 @@ body {
 }
 
 .item__review-dialog {
+  position: relative;
   padding: 30px;
   background: #81d4fa;
 }
 
 .item__review-dialog::after {
+  content: "";
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+  transform: translateY(100%);
   width: 0;
   height: 0;
-  border-top: 70px solid #2196f3;
+  border-top: 40px solid #2196f3;
   border-right: 70px solid transparent;
 }
 
