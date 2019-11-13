@@ -22,4 +22,4 @@ Exercise 1 - [codepen.io](https://codepen.io/alexandrpogodin/pen/qBBbRLw "codepe
 Exercise 2 TicTacToe (Player vs player) - [codepen.io](https://codepen.io/alexandrpogodin/pen/PooGXBP "codepen.io")  
 Exercise 2 TicTacToe Random (Player vs Random) - [codepen.io](https://codepen.io/alexandrpogodin/pen/GRRNddV "codepen.io")  
 Exercise 2 TicTacToe AI (Player vs AI) - [codepen.io](https://codepen.io/alexandrpogodin/pen/KKKNeRR "codepen.io")  
-Exercice 3 Game - [codepen.io](https://github.com/AlexandrPogodin/js-RatVsCatsGame "github rep")
+Exercice 3 Game - [github.com](https://github.com/AlexandrPogodin/js-RatVsCatsGame "github repository")
