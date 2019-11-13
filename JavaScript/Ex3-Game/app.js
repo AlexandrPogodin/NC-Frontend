@@ -4,8 +4,10 @@ const $app = document.querySelector('.app');
 const playground = [];
 const entityList = [];
 const playerTarget = [];
+let playerScore = 0;
 let isGameStarted = false;
 let timerAllMove;
+let isGameEnd = false;
 
 function randInt(min, max) {
   const rand = min + Math.random() * (max + 1 - min);
@@ -162,10 +164,17 @@ function createPlayground() {
 function renderPlayground() {
   const $playground = document.createElement('div');
   const $btnReset = document.createElement('button');
+  const $title = document.createElement('h1');
   $playground.classList.add('playground');
   $btnReset.classList.add('btn-reset');
   $btnReset.innerHTML = 'Начать заново';
+  $title.classList.add('title');
   $app.innerHTML = '';
+  if (!isGameEnd) {
+    $title.innerHTML = `Score: ${playerScore}`;
+  } else {
+    $title.innerHTML = `Game over (Score: ${playerScore})`;
+  }
   for (let i = 0; i < 10; i += 1) {
     for (let j = 0; j < 10; j += 1) {
       const cell = document.createElement('div');
@@ -173,12 +182,12 @@ function renderPlayground() {
       cell.dataset.x = j;
       cell.dataset.y = i;
       cell.innerHTML = playground[i][j];
-      if (playground[i][j] === '' || playground[i][j] === '🍲')
+      if (!isGameEnd && (playground[i][j] === '' || playground[i][j] === '🍲'))
         cell.classList.add('clickable');
       $playground.appendChild(cell);
     }
   }
-
+  $app.appendChild($title);
   $app.appendChild($playground);
   $app.appendChild($btnReset);
 }
@@ -209,6 +218,18 @@ function updateEntityList(obj, x, y) {
   // });
 }
 
+function checkPlayerExist() {
+  let res = false;
+  entityList.forEach(obj => {
+    if (obj instanceof Rat) res = true;
+  });
+  return res;
+}
+
+function updatePlayerScore() {
+  playerScore = entityList[0].score;
+}
+
 function updatePlayerTarget(x, y) {
   playerTarget.length = 0;
   playerTarget.push(...[+x, +y]);
@@ -233,7 +254,9 @@ function generateEntity(amt, Class) {
 
 function resetGame() {
   isGameStarted = false;
+  isGameEnd = false;
   clearTimeout(timerAllMove);
+  playerScore = 0;
   playerTarget.length = 0;
   entityList.length = 0;
   updatePlayground();
@@ -241,12 +264,21 @@ function resetGame() {
 
 function startGame(x, y) {
   isGameStarted = true;
+  isGameEnd = false;
   const player = new Rat([+x, +y]);
+  updatePlayerScore();
   playerTarget.push(...[+x, +y]);
   generateEntity(randInt(7, 10), Food);
-  // generateEntity(randInt(3, 5), Cat);
-  // generateEntity(50, Cat);
+  generateEntity(randInt(3, 5), Cat);
   timerAllMove = setTimeout(doMoves, 1000);
+}
+
+function endGame() {
+  console.log('game over');
+  isGameStarted = false;
+  isGameEnd = true;
+  updatePlayground();
+  clearTimeout(timerAllMove);
 }
 
 $app.addEventListener('click', e => {
@@ -276,6 +308,9 @@ function doMoves() {
       obj.getPlayerMove();
     }
   });
-  updatePlayground();
-  timerAllMove = setTimeout(doMoves, 1000);
+  if (checkPlayerExist()) {
+    updatePlayerScore();
+    updatePlayground();
+    timerAllMove = setTimeout(doMoves, 1000);
+  } else endGame();
 }
