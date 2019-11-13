@@ -1,4 +1,17 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable no-use-before-define */
+const $app = document.querySelector('.app');
+const playground = [];
+const entityList = [];
+const playerTarget = [];
+let isGameStarted = false;
+let timerAllMove;
+
+function randInt(min, max) {
+  const rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+}
+
 class Entity {
   constructor(position) {
     this.position = position;
@@ -20,36 +33,78 @@ class Character extends Entity {
     this.score = 0;
   }
 
+  moveRandom() {
+    const r = randInt(0, 3);
+    if (r === 0) this.moveUp();
+    if (r === 1) this.moveDown();
+    if (r === 2) this.moveLeft();
+    if (r === 3) this.moveRight();
+  }
+
+  getPlayerMove() {
+    const distanceX = Math.abs(playerTarget[0] - this.position[0]);
+    const distanceY = Math.abs(playerTarget[1] - this.position[1]);
+    if (
+      Math.abs(playerTarget[0] - (this.position[0] + this.speed)) < distanceX
+    ) {
+      this.moveRight();
+    } else if (
+      Math.abs(playerTarget[0] - (this.position[0] - this.speed)) < distanceX
+    ) {
+      this.moveLeft();
+    } else if (
+      Math.abs(playerTarget[1] - (this.position[1] + this.speed)) < distanceY
+    ) {
+      this.moveDown();
+    } else if (
+      Math.abs(playerTarget[1] - (this.position[1] - this.speed)) < distanceY
+    ) {
+      this.moveUp();
+    }
+  }
+
   moveUp() {
-    if (this.position[1] > -1 + this.speed) {
+    if (
+      this.position[1] > -1 + this.speed &&
+      this.isCanMove(this.position[0], this.position[1] - this.speed)
+    ) {
       updateEntityList(this, this.position[0], this.position[1] - this.speed);
       this.position[1] -= this.speed;
+      // updatePlayground();
     }
-    updatePlayground();
   }
 
   moveDown() {
-    if (this.position[1] < 10 - this.speed) {
+    if (
+      this.position[1] < 10 - this.speed &&
+      this.isCanMove(this.position[0], this.position[1] + this.speed)
+    ) {
       updateEntityList(this, this.position[0], this.position[1] + this.speed);
       this.position[1] += this.speed;
+      // updatePlayground();
     }
-    updatePlayground();
   }
 
   moveRight() {
-    if (this.position[0] < 10 - this.speed) {
+    if (
+      this.position[0] < 10 - this.speed &&
+      this.isCanMove(this.position[0] + this.speed, this.position[1])
+    ) {
       updateEntityList(this, this.position[0] + this.speed, this.position[1]);
       this.position[0] += this.speed;
+      // updatePlayground();
     }
-    updatePlayground();
   }
 
   moveLeft() {
-    if (this.position[0] > -1 + this.speed) {
+    if (
+      this.position[0] > -1 + this.speed &&
+      this.isCanMove(this.position[0] - this.speed, this.position[1])
+    ) {
       updateEntityList(this, this.position[0] - this.speed, this.position[1]);
       this.position[0] -= this.speed;
+      // updatePlayground();
     }
-    updatePlayground();
   }
 }
 
@@ -61,7 +116,12 @@ class Food extends Entity {
 
 class Rat extends Character {
   constructor(position) {
-    super(2, position);
+    super(1, position);
+  }
+
+  isCanMove(x, y) {
+    if (playground[y][x] === '' || playground[y][x] === '🍲') return true;
+    return false;
   }
 
   render() {
@@ -74,17 +134,20 @@ class Cat extends Character {
     super(1, position);
   }
 
+  isCanMove(x, y) {
+    if (
+      playground[y][x] === '' ||
+      playground[y][x] === '🍲' ||
+      playground[y][x] === '🐀'
+    ) {
+      return true;
+    }
+    return false;
+  }
+
   render() {
     return '🐈';
   }
-}
-
-const $app = document.querySelector('.app');
-const playground = [];
-const entityList = [];
-function randomInt(min, max) {
-  const rand = min + Math.random() * (max + 1 - min);
-  return Math.floor(rand);
 }
 
 function createPlayground() {
@@ -98,22 +161,26 @@ function createPlayground() {
 
 function renderPlayground() {
   const $playground = document.createElement('div');
-  const $btnUpdate = document.createElement('button');
+  const $btnReset = document.createElement('button');
   $playground.classList.add('playground');
-  $btnUpdate.classList.add('btn-update');
-  $btnUpdate.innerHTML = 'Обновить поле';
+  $btnReset.classList.add('btn-reset');
+  $btnReset.innerHTML = 'Начать заново';
   $app.innerHTML = '';
   for (let i = 0; i < 10; i += 1) {
     for (let j = 0; j < 10; j += 1) {
       const cell = document.createElement('div');
       cell.classList.add('cell');
+      cell.dataset.x = j;
+      cell.dataset.y = i;
       cell.innerHTML = playground[i][j];
+      if (playground[i][j] === '' || playground[i][j] === '🍲')
+        cell.classList.add('clickable');
       $playground.appendChild(cell);
     }
   }
 
   $app.appendChild($playground);
-  $app.appendChild($btnUpdate);
+  $app.appendChild($btnReset);
 }
 
 function updatePlayground() {
@@ -125,7 +192,7 @@ function updatePlayground() {
 }
 
 function updateEntityList(obj, x, y) {
-  if (playground[y][x] === '🍲') obj.score += 1;
+  obj.score += getPoints(x, y) || 0;
   const newEntityList = entityList.filter(entity => {
     if (entity.position[0] === x && entity.position[1] === y) {
       return false;
@@ -134,16 +201,81 @@ function updateEntityList(obj, x, y) {
   });
   entityList.length = 0;
   entityList.push(...newEntityList);
+
+  // entityList.forEach((entity, i) => {
+  //   if (entity.position[0] === x && entity.position[1] === y) {
+  //     entityList.splice(i, 1);
+  //   }
+  // });
+}
+
+function updatePlayerTarget(x, y) {
+  playerTarget.length = 0;
+  playerTarget.push(...[+x, +y]);
+}
+
+function getPoints(x, y) {
+  if (playground[y][x] === '🍲') return 1;
+  if (playground[y][x] === '🐀') return 2;
+}
+
+function generateEntity(amt, Class) {
+  const objects = [];
+  for (let i = 0; i < amt; i += 1) {
+    const x = randInt(0, 9);
+    const y = randInt(0, 9);
+    if (playground[y][x] === '') {
+      const obj = new Class([x, y]);
+      objects.push(obj);
+    }
+  }
+}
+
+function resetGame() {
+  isGameStarted = false;
+  clearTimeout(timerAllMove);
+  playerTarget.length = 0;
+  entityList.length = 0;
+  updatePlayground();
+}
+
+function startGame(x, y) {
+  isGameStarted = true;
+  const player = new Rat([+x, +y]);
+  playerTarget.push(...[+x, +y]);
+  generateEntity(randInt(7, 10), Food);
+  // generateEntity(randInt(3, 5), Cat);
+  // generateEntity(50, Cat);
+  timerAllMove = setTimeout(doMoves, 1000);
 }
 
 $app.addEventListener('click', e => {
-  if (e.target && e.target.matches('.btn-update')) {
-    updatePlayground();
+  if (e.target && e.target.matches('.btn-reset')) {
+    resetGame();
+  }
+  if (!isGameStarted && e.target && e.target.matches('.clickable')) {
+    startGame(e.target.dataset.x, e.target.dataset.y);
+  }
+  if (isGameStarted && e.target && e.target.matches('.clickable')) {
+    updatePlayerTarget(e.target.dataset.x, e.target.dataset.y);
   }
 });
 
-createPlayground();
-renderPlayground();
+resetGame();
 
-const food = new Food([0, 3]);
-const cat = new Cat([0, 2]);
+// const food = new Food([0, 3]);
+// const rat = new Rat([0, 4]);
+// const cat = new Cat([0, 2]);
+
+function doMoves() {
+  entityList.forEach(obj => {
+    if (obj instanceof Cat) {
+      obj.moveRandom();
+    }
+    if (obj instanceof Rat) {
+      obj.getPlayerMove();
+    }
+  });
+  updatePlayground();
+  timerAllMove = setTimeout(doMoves, 1000);
+}

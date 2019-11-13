@@ -21,6 +21,15 @@
   padding: 2px;
 }
 
+.clickable {
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.clickable:hover {
+  background: #e0e0e0;
+}
+
 .btn-generate {
   display: block;
   margin: 20px auto;
@@ -39,11 +48,11 @@
   box-shadow: 0 0 20px rgba(244, 67, 54, 0.5);
 }
 
-.btn-update {
+.btn-reset {
   display: block;
   margin: 20px auto;
-  color: #4caf50;
-  border: 1px solid #4caf50;
+  color: #f44336;
+  border: 1px solid #f44336;
   border-radius: 20px;
   background-color: #fff;
   padding: 10px 20px;
@@ -51,8 +60,8 @@
   transition: all linear 0.3s;
 }
 
-.btn-update:hover {
+.btn-reset:hover {
   color: #fff;
-  background-color: #4caf50;
-  box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+  background-color: #f44336;
+  box-shadow: 0 0 20px rgba(244, 67, 54, 0.5);
 }
