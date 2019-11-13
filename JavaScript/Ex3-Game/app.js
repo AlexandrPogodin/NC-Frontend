@@ -4,6 +4,7 @@ const $app = document.querySelector('.app');
 const playground = [];
 const entityList = [];
 const playerTarget = [];
+const tutorial = document.querySelector('.tutorial');
 let playerScore = 0;
 let isGameStarted = false;
 let timerAllMove;
@@ -253,6 +254,7 @@ function generateEntity(amt, Class) {
 }
 
 function resetGame() {
+  tutorial.classList.remove('none');
   isGameStarted = false;
   isGameEnd = false;
   clearTimeout(timerAllMove);
@@ -263,6 +265,7 @@ function resetGame() {
 }
 
 function startGame(x, y) {
+  tutorial.classList.add('none');
   isGameStarted = true;
   isGameEnd = false;
   const player = new Rat([+x, +y]);
@@ -309,6 +312,8 @@ function doMoves() {
     }
   });
   if (checkPlayerExist()) {
+    generateEntity(randInt(0, 1), Food);
+    generateEntity(randInt(0, 1), Cat);
     updatePlayerScore();
     updatePlayground();
     timerAllMove = setTimeout(doMoves, 1000);
