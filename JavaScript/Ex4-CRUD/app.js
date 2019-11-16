@@ -73,7 +73,7 @@ const operations = {
 4 - Delete.
 0 - Exit
     `);
-    const answer = await question('Choose an operation (1-4): ');
+    const answer = await question('Choose an operation (0-4): ');
     if (+answer === 1) return operations.create();
     if (+answer === 2) return operations.read();
     if (+answer === 3) return operations.update();
